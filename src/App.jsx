@@ -3,6 +3,9 @@ import Login from './components/Login';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import SymptomTracking from './pages/SymptomTracking';
+import CommunitySupport from './pages/CommunitySupport';
+import EducationalResources from './pages/EducationalResources';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -140,13 +143,19 @@ function App() {
       case 'login':
         return <Login onLogin={handleLogin} />;
       case 'home':
-        return <Home />;
+        return <Home onNavigate={navigateTo} />;
+      case 'symptoms':
+        return <SymptomTracking />;
+      case 'community':
+        return <CommunitySupport />;
+      case 'resources':
+        return <EducationalResources />;
       case 'about':
         return <AboutUs />;
       case 'contact':
         return <ContactUs />;
       default:
-        return <Home />;
+        return <Home onNavigate={navigateTo} />;
     }
   };
 

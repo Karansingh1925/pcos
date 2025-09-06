@@ -1,0 +1,38 @@
+[
+  {
+    "id": "36a3e3b2-9d00-4cb8-b0db-aa2d212f7460",
+    "title": "Finally found a workout routine that works for me!",
+    "content": "After months of trying different exercises, I discovered that low-impact strength training combined with yoga has been amazing for managing my PCOS symptoms...",
+    "author": "Sarah M.",
+    "category": "exercise",
+    "replies": 23,
+    "likes": 45,
+    "timeAgo": "2 hours ago",
+    "isHelpful": true,
+    "createdAt": "2025-09-05T14:48:09.369Z"
+  },
+  {
+    "id": "67f2fd5d-04f0-4c94-b8d3-0afa7ed3e25e",
+    "title": "Question about metformin side effects",
+    "content": "I just started metformin and experiencing some digestive issues. Is this normal? How long did it take for your body to adjust?",
+    "author": "Emma K.",
+    "category": "symptoms",
+    "replies": 18,
+    "likes": 12,
+    "timeAgo": "4 hours ago",
+    "isHelpful": false,
+    "createdAt": "2025-09-05T14:48:09.370Z"
+  },
+  {
+    "id": "a90abd89-f3b8-4231-b889-8a4dd13abc8f",
+    "title": "Anti-inflammatory meal prep ideas?",
+    "content": "Looking for some easy meal prep recipes that are anti-inflammatory and PCOS-friendly. What are your go-to meals?",
+    "author": "Lisa R.",
+    "category": "nutrition",
+    "replies": 31,
+    "likes": 67,
+    "timeAgo": "6 hours ago",
+    "isHelpful": true,
+    "createdAt": "2025-09-05T14:48:09.370Z"
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "overview": [
+    {
+      "id": "1bc116e5-fdbf-4b1f-984a-b55af9eba385",
+      "title": "What is PCOS? Complete Guide",
+      "type": "Article",
+      "duration": "10 min read",
+      "difficulty": "Beginner",
+      "description": "A comprehensive introduction to Polycystic Ovary Syndrome, covering causes, prevalence, and basic understanding.",
+      "tags": [
+        "basics",
+        "introduction",
+        "causes"
+      ],
+      "rating": 4.8,
+      "views": 15420,
+      "createdAt": "2025-09-05T14:48:09.372Z"
+    },
+    {
+      "id": "ec903b6e-e9a0-4f42-88ec-0b1dcc1a50f6",
+      "title": "PCOS Types and Variations",
+      "type": "Video",
+      "duration": "15 min",
+      "difficulty": "Intermediate",
+      "description": "Understanding the different types of PCOS and how they affect treatment approaches.",
+      "tags": [
+        "types",
+        "diagnosis",
+        "treatment"
+      ],
+      "rating": 4.6,
+      "views": 8930,
+      "createdAt": "2025-09-05T14:48:09.372Z"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "775fd175-46da-4b6c-89c1-1206f0ece2ff",
+      "title": "Recognizing PCOS Symptoms",
+      "type": "Interactive Guide",
+      "duration": "20 min",
+      "difficulty": "Beginner",
+      "description": "Interactive tool to help identify and understand common PCOS symptoms.",
+      "tags": [
+        "symptoms",
+        "diagnosis",
+        "self-assessment"
+      ],
+      "rating": 4.9,
+      "views": 22340,
+      "createdAt": "2025-09-05T14:48:09.372Z"
+    }
+  ],
+  "nutrition": [
+    {
+      "id": "cbda56ce-41b2-4ad5-a67d-f579f08f4d07",
+      "title": "PCOS-Friendly Meal Planning",
+      "type": "Guide + Recipes",
+      "duration": "30 min",
+      "difficulty": "Beginner",
+      "description": "Complete meal planning guide with 50+ PCOS-friendly recipes and shopping lists.",
+      "tags": [
+        "meal-planning",
+        "recipes",
+        "shopping"
+      ],
+      "rating": 4.9,
+      "views": 31200,
+      "createdAt": "2025-09-05T14:48:09.372Z"
+    }
+  ]
+}
