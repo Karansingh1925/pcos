@@ -2,50 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="PCOS Health - Comprehensive health management platform for women with Polycystic Ovary Syndrome. Track symptoms, get expert advice, and manage your PCOS journey." />
-    <meta name="keywords" content="PCOS, Polycystic Ovary Syndrome, women's health, health tracking, symptom management, fertility, hormonal health" />
-    <meta name="author" content="PCOS Health Team" />
-    
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="PCOS Health - Your PCOS Management Platform" />
-    <meta property="og:description" content="Comprehensive health management platform for women with Polycystic Ovary Syndrome" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pcoshealth.com" />
-    <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PCOS Health - Your PCOS Management Platform" />
-    <meta name="twitter:description" content="Comprehensive health management platform for women with Polycystic Ovary Syndrome" />
-    <meta name="twitter:image" content="/og-image.jpg" />
-    
-    <!-- Theme Color for Mobile Browsers (Progressive Enhancement) -->
-    <meta name="theme-color" content="#ec4899" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#be185d" media="(prefers-color-scheme: dark)" />
-    
-    <!-- Apple-specific meta tags for better iOS support -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="PCOS Health" />
-    
-    <!-- Microsoft Tile Color -->
-    <meta name="msapplication-TileColor" content="#ec4899" />
-    
-    <!-- Preconnect to Google Fonts for better performance -->
+    <title>PCOS Health</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <title>PCOS Health - Your PCOS Management Platform</title>
-    
+
     <style>
       /* Loading screen styles */
       #loading-screen {
@@ -62,7 +25,7 @@
         z-index: 9999;
         transition: opacity 0.5s ease-out;
       }
-      
+
       .loading-logo {
         font-size: 2.5rem;
         font-weight: 700;
@@ -70,7 +33,7 @@
         margin-bottom: 1rem;
         font-family: 'Inter', sans-serif;
       }
-      
+
       .loading-spinner {
         width: 40px;
         height: 40px;
@@ -79,26 +42,25 @@
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
-      
+
       @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
-      
+
       .loading-text {
         color: white;
         margin-top: 1rem;
         font-family: 'Inter', sans-serif;
         font-weight: 500;
       }
-      
+
       /* Hide loading screen when app is ready */
       .app-loaded #loading-screen {
         opacity: 0;
         pointer-events: none;
       }
-      
-      /* Ensure body uses Inter font */
+
       body {
         font-family: 'Inter', sans-serif;
         margin: 0;
@@ -107,32 +69,37 @@
     </style>
   </head>
   <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-      <div class="loading-logo">PCOS Health</div>
-      <div class="loading-spinner"></div>
-      <div class="loading-text">Loading your health dashboard...</div>
-    </div>
-    
-    <!-- Main App Container -->
     <div id="root"></div>
-    
-    <!-- Main Application Script -->
     <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- Loading Screen Script -->
-    <script>
-      // Hide loading screen when app is ready
+  </body>
+  <script>
+      // Hide loading screen after React is hydrated; fallback to window load
+      function removeLoadingScreen() {
+        document.body.classList.add('app-loaded');
+        setTimeout(function() {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.remove();
+          }
+        }, 500);
+      }
+
+      // Listen for React hydration by waiting for an element in #root
+      function onHydrated() {
+        if (document.getElementById('root') && document.getElementById('root').children.length > 0) {
+          removeLoadingScreen();
+        } else {
+          setTimeout(onHydrated, 100);
+        }
+      }
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(onHydrated, 1000); // Ensures loading at least 1 second; then checks hydration
+      });
       window.addEventListener('load', function() {
         setTimeout(function() {
-          document.body.classList.add('app-loaded');
-          setTimeout(function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            if (loadingScreen) {
-              loadingScreen.remove();
-            }
-          }, 500);
-        }, 1000); // Show loading for at least 1 second
+          // Fallback in case hydration detection above doesn't work (e.g., SSR, errors)
+          removeLoadingScreen();
+        }, 3000);
       });
     </script>
   </body>

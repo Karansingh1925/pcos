@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 
 const CommunitySupport = () => {
   const [activeTab, setActiveTab] = useState('discussions');
@@ -101,12 +103,19 @@ const CommunitySupport = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Welcome Message */}
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="mb-4">
+          <Link 
+            to="/dashboard" 
+            className="inline-flex items-center text-pink-600 hover:text-pink-700 font-medium"
+          >
+            <FiArrowLeft className="mr-1" /> Back to Home
+          </Link>
+        </div>
         {showWelcome && (
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-6 mb-6">
-            <div className="flex items-start space-x-3">
+          <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <div className="flex items-start">
               <div className="flex-shrink-0">
                 <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
                   <span className="text-purple-600 text-lg">👋</span>

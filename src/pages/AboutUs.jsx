@@ -1,9 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 
-const AboutUs = () => {
+const AboutUs = ({ onNavigate }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 py-16">
       <div className="container mx-auto px-4">
+        <div className="mb-6">
+          <Link 
+            to="/dashboard" 
+            className="inline-flex items-center text-pink-600 hover:text-pink-700 font-medium"
+          >
+            <FiArrowLeft className="mr-1" /> Back to Home
+          </Link>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-800 mb-6">About PCOS Health</h1>
